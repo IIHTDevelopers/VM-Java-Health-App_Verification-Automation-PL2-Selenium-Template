@@ -306,10 +306,7 @@ public class verification_testcase extends AppTestBase {
 		Assert.assertTrue(verification_pageInstance.isPendingRadioButtonVisible());
 	}
 
-	/*
-	 * ----------------Verification L2 test cases starts from here
-	 * (15-21)-----------------------------
-	 */
+
 
 	@Test(priority = 15, groups = {
 			"sanity" }, description = "Precondition: User should be logged in and on the Verification module\r\n"
@@ -323,102 +320,6 @@ public class verification_testcase extends AppTestBase {
 		Assert.assertEquals(verification_pageInstance.verifyRequiredFieldErrormessage(),
 				inventoryExpectedData.get("itemNameReq"));
 
-	}
-
-	@Test(priority = 16, groups = {
-			"sanity" }, description = "Precondition: User should be logged in and on the Inventory section.\r\n"
-					+ "1. Navigate to the \"Internal\" section under Inventory.\r\n"
-					+ "2. Click on \"Purchase Request\".\r\n"
-					+ "3. Click on the \"Create Purchase Request\" button.\r\n"
-					+ "4. Fill in the required fields to create a Purchase Request.\r\n"
-					+ "5. Click on the \"Request\" button.\r\n"
-					+ "6. Verify that the Purchase Request has been successfully created.")
-	public void createAndverifyPurchaseRequest() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-		Map<String, String> inventoryExpectedData = new FileOperations().readJson(expectedDataFilePath, "inventory");
-
-		Assert.assertEquals(verification_pageInstance.createAndverifyPurchaseRequest(inventoryExpectedData),
-				inventoryExpectedData.get("purchaseRequestCreationMessage"), "Actual and Expected are not equal");
-	}
-
-	@Test(priority = 17, groups = {
-			"sanity" }, description = "Precondition: User should be logged in and on the Verification section.\r\n"
-					+ "1. Navigate to the \"Inventory\" section under Verification.\r\n"
-					+ "2. Click on \"Purchase Request\".\r\n"
-					+ "3.  Verify that the recently created Purchase Request is visible in the list. \r\n"
-					+ "4.  Verify that the status of the Purchase Request is \"Pending\".")
-	public void verifyPurchaseRequestInVerificationModule() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-		Map<String, String> verificationExpectedData = new FileOperations().readJson(expectedDataFilePath,
-				"verification");
-
-		Assert.assertEquals(
-				verification_pageInstance.verifyPurchaseRequestInVerificationModule(verificationExpectedData),
-				verificationExpectedData.get("status_1"));
-	}
-
-	@Test(priority = 18, groups = {
-			"sanity" }, description = "Precondition: User should be logged in and on the Verification section.\r\n"
-					+ "1. Navigate to the \"Inventory\" section under Verification.\r\n"
-					+ "2. Click on \"Purchase Request\".\r\n"
-					+ "3. Find the Purchase Request with \"Pending\" status.\r\n"
-					+ "4. Click on the \"View\" button under the action column for the Purchase Request.\r\n"
-					+ "5. Approve the Purchase Request.\r\n"
-					+ "6. Verify the success message confirming the approval.\r\n"
-					+ "7. Click on the \"Approved\" radio button.\r\n"
-					+ "8. Verify that the status of the Purchase Request has changed to \"Approved\".")
-	public void approveThePurchaseRequestAndVerifyStatus() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-		Map<String, String> verificationExpectedData = new FileOperations().readJson(expectedDataFilePath,
-				"verification");
-
-		Assert.assertFalse(verification_pageInstance.approveThePurchaseRequestAndVerifyStatus(verificationExpectedData)
-				.contains(verificationExpectedData.get("purchaseRequestApproveMessage")));
-		Assert.assertEquals(verification_pageInstance.verifyPurchaseRequestStatusInTable(verificationExpectedData,
-				verificationExpectedData.get("status_2")), verificationExpectedData.get("status_2"));
-	}
-
-	@Test(priority = 19, groups = {
-			"sanity" }, description = "Precondition: User should be logged in and on the Verification section.\r\n"
-					+ "1. Navigate to the \"Inventory\" section under Verification.\r\n"
-					+ "2. Click on \"Purchase Request\".\r\n"
-					+ "3. Click on the \"View\" button under the action column for the Purchase Request.\r\n"
-					+ "4. Click on \"Reject All\" button\r\n")
-	public void rejectAPurchaseRequestAndVerifyThePopUpMessage() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-		Map<String, String> verificationExpectedData = new FileOperations().readJson(expectedDataFilePath,
-				"verification");
-
-		Assert.assertTrue(
-				verification_pageInstance.rejectAPurchaseRequestAndVerifyThePopUpMessage(verificationExpectedData)
-						.contains(verificationExpectedData.get("remarksCompulsaryForCancellation")));
-	}
-
-	@Test(priority = 20, groups = {
-			"sanity" }, description = "Precondition: User should be logged in and on the Verificationn section.\r\n"
-					+ "1. Navigate to the \"Inventory\" section under Verification.\r\n"
-					+ "2. Click on \"Purchase Request\".\r\n" + "3. Click on the \"Approved\" radio button.\r\n"
-					+ "4. Find the previously approved Purchase Request.\r\n"
-					+ "5. Click on the \"View\" button under the action column for the Purchase Request.\r\n"
-					+ "6. Reject the Purchase Request.\r\n" + "7. Click on the \"Rejected\" radio button.\r\n"
-					+ "8. Verify that the status of the Purchase Request has changed to \"Rejected\".")
-	public void rehectThePurchaseRequestAndVerifyStatus() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-		Map<String, String> verificationExpectedData = new FileOperations().readJson(expectedDataFilePath,
-				"verification");
-
-		Assert.assertFalse(verification_pageInstance.rejectThePurchaseRequestAndVerifyStatus(verificationExpectedData)
-				.contains(verificationExpectedData.get("purchaseRequestApproveMessage")));
-		Assert.assertEquals(verification_pageInstance.verifyPurchaseRequestStatusInTable(verificationExpectedData,
-				verificationExpectedData.get("status_3")), verificationExpectedData.get("status_3"));
-	}
-
-	@Test(priority = 21, groups = { "sanity" }, description = "Under verification > Purchase Request module"
-			+ "Take the screenshot of the current page")
-	public void takingScreenshotOfCurrentPage() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.takingScreenshotOfTheCurrentPage());
 	}
 
 	@AfterClass(alwaysRun = true)
