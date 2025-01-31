@@ -14,35 +14,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class verification_page extends StartupPage {
 
-	public By getUsernameTextfieldLocator() {
-		return By.id(" ");
-	}
-
-	public By getUsernameTextboxLocator() {
-		return By.xpath("  ");
-	}
-
-	public By getPasswordTextboxLocator() {
-		return By.xpath("  ");
-	}
-
-	public By getSignInButtonLocator() {
-		return By.xpath("  ");
-	}
-
-	public By getVerificationLocator() {
-		return By.xpath(" ");
-	}
-
-	public By getHomepageLogoLocator() {
-		return By.cssSelector(" ");
-	}
 
 	public By getPageBarFixedLocator(String navBarName) {
-		return By.xpath("  ");
-	}
-
-	public By getInventoryPageBarFixedLocator(String navBarName) {
 		return By.xpath("  ");
 	}
 
@@ -54,20 +27,8 @@ public class verification_page extends StartupPage {
 		return By.xpath("  ");
 	}
 
-	public By getAnchorTagLocatorByText(String anchorTagName) {
-		return By.xpath("   ");
-	}
-
 	public By searchBarId() {
 		return By.id("   ");
-	}
-
-	public By calendarFromDropdown() {
-		return By.xpath("    ");
-	}
-
-	public By calendarToDropdown() {
-		return By.xpath("          ");
 	}
 
 	public By getOkButtonLocator() {
@@ -84,78 +45,6 @@ public class verification_page extends StartupPage {
 
 	public By favouriteOrStarIcon() {
 		return By.xpath("  ");
-	}
-
-	public By verifyRequisitionDropdown() {
-		return By.xpath("  ");
-	}
-
-	public By getReqStatus() {
-		return By.cssSelector("   ");
-	}
-
-	public By getInventoryLocator() {
-		return By.xpath("   ");
-	}
-
-	public By getLocatorById(String idName) {
-		return By.id(idName);
-	}
-
-	public By getInputFieldLocator(String inputFieldName) {
-		return By.cssSelector("  ");
-	}
-
-	public By getPopUpMessageText(String msgStatus, String messageText) {
-		return By.xpath("    ");
-	}
-
-	public By getPurchaseRequestStatus(String companyName, String status) {
-		return By.xpath("   ");
-	}
-
-	public By getPurchaseRequestViewButton(String status) {
-		return By.xpath("  ");
-	}
-
-	public By getVerificationRemarks() {
-		return By.cssSelector("  ");
-	}
-
-	public By getDateRangeButton() {
-		return By.cssSelector("  ");
-	}
-
-	public By getActualRequestedOnDates() {
-		return By.xpath("  ");
-	}
-
-	public By getRequisitionNumberLocatorsForAllRequisitions() {
-		return By.xpath("  ");
-	}
-
-	public By getRequisitionNumberLocatorFromTheReport() {
-		return By.xpath("  ");
-	}
-
-	public By getRequisitionStatusDropdownLocator() {
-		return By.xpath("  ");
-	}
-
-	public By getItemNameRequiredMsg() {
-		return By.xpath("  ");
-	}
-
-	public By getTotalRecordCount() {
-		return By.cssSelector("  ");
-	}
-
-	public By getResultCountLocator() {
-		return By.cssSelector("   ");
-	}
-	
-	public By getFirstViewButton() {
-		return By.xpath("   ");
 	}
 
 	public verification_page(WebDriver driver) {
@@ -574,130 +463,6 @@ public class verification_page extends StartupPage {
 	 */
 	public String verifyRequiredFieldErrormessage() throws Exception {
 		return null;
-	}
-
-	/**
-	 * @Test16 about this method createAndVerifyPurchaseRequest()
-	 * 
-	 * @param inventoryExpectedData : A map containing expected data for inventory
-	 *                              fields such as vendor name, item name, and
-	 *                              remarks.
-	 * @description : This method navigates to the Inventory tab, scrolls to the
-	 *              Purchase Request section, and creates a new Purchase Request by
-	 *              filling in mandatory fields. It then verifies the creation
-	 *              success message.
-	 * @return : String - the success message text after creating the Purchase
-	 *         Request.
-	 * @throws : Exception - if there is an issue with locating elements, clicking
-	 *           buttons, or filling in fields.
-	 * @author : YAKSHA
-	 */
-	public String createAndverifyPurchaseRequest(Map<String, String> inventoryExpectedData) throws Exception {
-		return null;
-	}
-
-	/**
-	 * @Test17 about this method verifyPurchaseRequestInVerificationModule()
-	 * 
-	 * @param verificationExpectedData : A map containing expected data for
-	 *                                 verification fields such as vendor name and
-	 *                                 status.
-	 * @description : This method navigates to the Verification tab, scrolls to the
-	 *              Purchase Request section under Inventory, and verifies the
-	 *              status of a Purchase Request by checking its status text.
-	 * @return : String - the status text of the Purchase Request.
-	 * @throws : Exception - if there is an issue with locating elements, clicking
-	 *           buttons, or verifying the status.
-	 * @author : YAKSHA
-	 */
-	public String verifyPurchaseRequestInVerificationModule(Map<String, String> verificationExpectedData) {
-		return null;
-	}
-
-	/**
-	 * @Test18.1 about this method approveThePurchaseRequestAndVerifyStatus()
-	 * 
-	 * @param : verificationExpectedData - a map containing expected data for
-	 *          verification
-	 * @description : This method clicks the view button for a purchase request,
-	 *              approves it, and verifies the success message after approval.
-	 * @return : String - the success message text after approving the purchase
-	 *         request
-	 * @throws : Exception - if there is an issue locating or clicking elements, or
-	 *           verifying the message
-	 * @author : YAKSHA
-	 */
-	public String approveThePurchaseRequestAndVerifyStatus(Map<String, String> verificationExpectedData) {
-		return null;
-	}
-
-	/**
-	 * @Test19 about this method rejectAPurchaseRequestAndVerifyThePopUpMessage()
-	 * 
-	 * @param verificationExpectedData - a map containing expected data for
-	 *                                 verification
-	 * @description : This method clicks the view button for a purchase request in
-	 *              the approved section, attempts to reject it without entering
-	 *              remarks, and verifies the popup message indicating that remarks
-	 *              are compulsory for cancellation.
-	 * @return : String - the popup message text indicating remarks are compulsory
-	 *         for cancellation
-	 * @throws : Exception - if there is an issue locating or clicking elements, or
-	 *           verifying the popup message
-	 * @author : YAKSHA
-	 */
-	public String rejectAPurchaseRequestAndVerifyThePopUpMessage(Map<String, String> verificationExpectedData) {
-		return null;
-	}
-
-	/**
-	 * @Test20.1 about this method rejectThePurchaseRequestAndVerifyStatus()
-	 * 
-	 * @param : verificationExpectedData - a map containing expected data for
-	 *          verification
-	 * @description : This method clicks the view button for a purchase request in
-	 *              the approved section, rejects it, enters remarks, and verifies
-	 *              the success message after rejection.
-	 * @return : String - the success message text after rejecting the purchase
-	 *         request
-	 * @throws : Exception - if there is an issue locating or clicking elements,
-	 *           entering remarks, or verifying the message
-	 * @author : YAKSHA
-	 */
-	public String rejectThePurchaseRequestAndVerifyStatus(Map<String, String> verificationExpectedData) {
-		return null;
-	}
-
-	/**
-	 * @Test18.2 and @Test20.2 about this method
-	 * verifyPurchaseRequestStatusInTable()
-	 * 
-	 * @param : verificationExpectedData - a map containing expected data for
-	 *          verification
-	 * @param : status - the status to be verified (e.g., "approved", "pending",
-	 *          "rejected")
-	 * @description : This method clicks the radio button for the specified status,
-	 *              finds the purchase request with the given vendor name and
-	 *              status, and verifies its status in the table.
-	 * @return : String - the status of the purchase request from the table
-	 * @throws : Exception - if there is an issue locating or clicking elements, or
-	 *           verifying the status
-	 * @author : YAKSHA
-	 */
-	public String verifyPurchaseRequestStatusInTable(Map<String, String> verificationExpectedData, String status) {
-		return null;
-	}
-
-	/**
-	 * @Test21 about this method takingScreenshotOfTheCurrentPage()
-	 * @param : null
-	 * @description : Taking screenshot of the current page.
-	 * @return : Boolean
-	 * @author : YAKSHA
-	 */
-	public Boolean takingScreenshotOfTheCurrentPage() throws Exception {
-		
-		return false;
 	}
 
 }
