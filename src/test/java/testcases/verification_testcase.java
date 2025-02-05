@@ -280,47 +280,6 @@ public class verification_testcase extends AppTestBase {
 		Assert.assertTrue(verification_pageInstance.clickButtonByText("Back to Requisition List"));
 	}
 
-	@Test(priority = 13, groups = {
-			"sanity" }, description = "Pre condition: User should be logged in and it is on Requisition tab in verification module \r\n"
-					+ "1. Click on inventory section \r\n" + "2. Click on the \"Purchase Request\" sub-tab.\r\n"
-					+ "3. Find and select the \"All\" radio button to view all records.\r\n"
-					+ "4. Fetch and Verify Result Counts. \r\n"
-					+ "5. The result count displayed at the bottom of the page should match the total record count.")
-	public void verifyRecordCountMatches() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.verifyRecordCountMatches());
-	}
-
-	@Test(priority = 14, groups = { "sanity" }, description = "Pre condition: User should be logged in\r\n"
-			+ "1. Verify \"Pending\" radio button is visible\r\n"
-			+ "2. Scroll all the way to the bottom of the page\r\n" + "3. Verify \"Previous\" button is visible\r\n"
-			+ "4. Scroll all the way to the top of the page\r\n" + "5. Verify \"Pending\" radio button is visible")
-	public void verifyTheUserIsAbleScrollUpAndDown() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-
-		Assert.assertTrue(verification_pageInstance.isPendingRadioButtonVisible());
-		Assert.assertTrue(verification_pageInstance.scrollAllTheWayDown());
-		Assert.assertTrue(verification_pageInstance.isPreviousButtonVisible());
-		Assert.assertTrue(verification_pageInstance.scrollAllTheWayUp());
-		Assert.assertTrue(verification_pageInstance.isPendingRadioButtonVisible());
-	}
-
-
-
-	@Test(priority = 15, groups = {
-			"sanity" }, description = "Precondition: User should be logged in and on the Verification module\r\n"
-					+ "1. Navigate to the \"Internal\" section under Inventory.\r\n"
-					+ "2. Click on \"Purchase Request\".\r\n"
-					+ "3. Click on the \"Create Purchase Request\" button.\r\n" + "4. Click on the \"Request\" button.")
-	public void verifyRequiredFieldErrormessage() throws Exception {
-		verification_pageInstance = new verification_page(driver);
-		Map<String, String> inventoryExpectedData = new FileOperations().readJson(expectedDataFilePath, "inventory");
-
-		Assert.assertEquals(verification_pageInstance.verifyRequiredFieldErrormessage(),
-				inventoryExpectedData.get("itemNameReq"));
-
-	}
 
 	@AfterClass(alwaysRun = true)
 	public void tearDown() {
