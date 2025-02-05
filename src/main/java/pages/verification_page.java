@@ -226,66 +226,6 @@ public class verification_page extends StartupPage {
 		return false;
 	}
 
-	/**
-	 * @Test14.1 and @Test14.5 about this method isRadioButtonIsVisible()
-	 * 
-	 * @param : null
-	 * @description : This method verifies whether the "Pending" radio button is
-	 *              visible on the screen
-	 * @return : boolean - true if the "Pending" radio button is visible and false
-	 *         if not visible
-	 * @throws : Exception - if there is an issue locating or radio button
-	 * @author : YAKSHA
-	 */
-	public boolean isPendingRadioButtonVisible() throws Exception {
-		
-		return false;
-	}
-
-	/**
-	 * @Test14.2 about this method scrollAllTheWayDown()
-	 * 
-	 * @param : null
-	 * @description : This method vertically scrolls the screen to the bottom
-	 * @return : boolean - true if successfully scrolled down and false if not
-	 *         scrolled
-	 * @throws : Exception - if there is an issue while scrolling
-	 * @author : YAKSHA
-	 */
-	public boolean scrollAllTheWayDown() throws Exception {
-		
-		return false;
-	}
-
-	/**
-	 * @Test14.3 about this method isPreviousButtonVisible()
-	 * 
-	 * @param : null
-	 * @description : This method verifies whether the "Previous" button is visible
-	 *              on the screen
-	 * @return : boolean - true if the "Previous" button is visible and false if it
-	 *         is not visible
-	 * @throws : Exception - if there is an issue finding the button
-	 * @author : YAKSHA
-	 */
-	public boolean isPreviousButtonVisible() throws Exception {
-		
-		return false;
-	}
-
-	/**
-	 * @Test14.4 about this method scrollAllTheWayUp()
-	 * 
-	 * @param : null
-	 * @description : This method vertically scrolls the screen to the top
-	 * @return : boolean - true if successfully scrolled up and false if not
-	 *         scrolled
-	 * @throws : Exception - if there is an issue while scrolling
-	 * @author : YAKSHA
-	 */
-	public boolean scrollAllTheWayUp() throws Exception {
-		return false;
-	}
 
 	/**
 	 * @Test10.1 @Test10.3 @Test10.5 @Test10.7 @Test12.2 about this method
@@ -429,40 +369,5 @@ public class verification_page extends StartupPage {
 		return false;
 	}
 
-	/**
-	 * @Test13 about this method verifyRecordCountMatches()
-	 * 
-	 * @param : null
-	 * @description : This test case navigates to the "Verification" module, goes to
-	 *              "Inventory" -> "Purchase Request", selects "All" radio button,
-	 *              and verifies that the shown result count and the total record
-	 *              count at the bottom of the page are equal.
-	 * @return : boolean - true if the counts match, false otherwise
-	 * @throws : Exception - if there is an issue navigating, selecting radio
-	 *           buttons, or extracting counts
-	 * @author : YAKSHA
-	 */
-	public boolean verifyRecordCountMatches() throws Exception {
-		return false;
-	}
-
-	/**
-	 * @Test15 about this method verifyRequiredFieldErrormessage()
-	 * 
-	 * @param : null
-	 * @description : This method verifies the error message for a required field
-	 *              when creating a purchase request. It navigates to the
-	 *              "Inventory" section, selects "Internal", then "Purchase
-	 *              Request", and attempts to create a purchase request without
-	 *              filling the required item name field. The method highlights the
-	 *              required field error message and returns its text.
-	 * @return : String - the error message text for the required item name field
-	 * @throws : Exception - if there is an issue locating or clicking elements, or
-	 *           retrieving the error message text
-	 * @author : YAKSHA
-	 */
-	public String verifyRequiredFieldErrormessage() throws Exception {
-		return null;
-	}
 
 }
